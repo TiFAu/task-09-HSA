@@ -1,0 +1,29 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>SHA</title>
+        <meta name="description" content="Samples for my students">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="shortcut icon" href="../images/a-level-ico.png" type="image/x-icon">
+        <link rel="stylesheet" href="../css/style-09.css">
+        <!-- подключаем скрипт sha256 к странице  -->
+        <script src="https://cdn.rawgit.com/chrisveness/crypto/4e93a4d/sha256.js"></script>
+        <object class="chrome-extension://jffafkigfgmjafhpkoibhfefeaebmccg/" style="display: none; visibility: hidden;"></object>
+    </head>
+    <body style="color:#333">
+        <button id="registration" onclick="reg( event )" style="display: inline-block;">Регистрация</button>
+        <button id="sign-in" onclick="signIn()" style="display: inline-block;">Вход</button>
+        <h3 id="title"></h3>
+        <div id="demo" style="display: none;">
+                <p>User name:</p>
+                <input id="name" type="text">
+                <p>password:</p>
+                <input id="pass" type="password"><p></p>
+                <button onclick="testUserData()">Submit</button>
+        </div>
+        <div class="logo">© Филиппова Ірина 2018</div>
+        <script src="../js/index09-1.js"></script>
+
+
+    </body>
+</html>
