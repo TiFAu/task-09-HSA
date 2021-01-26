@@ -39,8 +39,7 @@ function testUserData () {
     if ( !nameElem.value || !passElem.value || !emailElem.value || !avatarElem.value) return // если не введено имя или пароль выходим
     var userKey = Sha256.hash ( nameElem.value + passElem.value + emailElem.value ) //генерим дайджест имя + пароль
     if ( demo.regim === 0 ) { // в форме "Регистарция"
-        if ( users.some ( value => value.key === userKey) === false ){
-            //users.indexOf ( userKey ) < 0 ) { // если в массиве пользователей дайджест отсутствует
+        if ( !users.some ( value => value.key === userKey)){
             users.push ( 
                 {   key: userKey,
                     name: nameElem.value,
