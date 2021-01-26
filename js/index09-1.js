@@ -54,16 +54,16 @@ function testUserData () {
     }
     else {
         pageForRegistredUsers ( true )
-        if ( users.some ( value => value.key === userKey) === true ) { // если дайджест существует в массиве пользователей
+        if ( !users.some ( value => value.key === userKey)) { // если дайджест не существует в массиве пользователей
+            title.innerHTML = `Пользователь ${nameElem.value} не зарегистрирован. Войдите корректный логин и пароль или зарегистрируйтесь`//если дайджест в массиве не существует говорим фе..
+            hideButtons ( false ) // намекаем на регистрацию или коррректный вход
+        } else {
             title.innerHTML = nameElem.value // выводим имя вошедшего пользоваеля
             var avatarU = document.createElement ('img') //создаем картинку
             avatarU.id = "avatarUser" // добавляем картинке айди
             avatarU.src = avatarElem.value // передаем в картинку url аватарки
             avatarU.width = 300 // задаем размер аватарки
             pageforregisteredusers.appendChild( avatarU ) // передаем аватарку в div c id = pageforregisteredusers
-        } else {
-            title.innerHTML = `Пользователь ${nameElem.value} не зарегистрирован. Войдите корректный логин и пароль или зарегистрируйтесь`//если дайджест в массиве не существует говорим фе..
-            hideButtons ( false ) // намекаем на регистрацию или коррректный вход
         }
     }
     
